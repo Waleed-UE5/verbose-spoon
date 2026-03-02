@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday Aqsa | Lovely Person</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Poppins:wght@300;600&display=swap');
+
+        * { box-sizing: border-box; }
+
+        body, html {
+            margin: 0; padding: 0; width: 100%; min-height: 100%;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* FULL SCREEN ROSE FLOWERS BACKGROUND */
+        .rose-background {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            /* High-quality Real Rose Texture */
+            background-image: url('https://images.unsplash.com/photo-1533616688419-b7a585564566?q=80&w=1974&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+
+        /* SOFT BLOSSOM OVERLAY */
+        .rose-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(255, 240, 245, 0.2); /* Very light pink tint */
+            z-index: -1;
+        }
+
+        .scroll-container {
+            display: flex; flex-direction: column; align-items: center;
+            padding: 40px 15px; text-align: center;
+        }
+
+        /* ELEGANT GLASS PANELS */
+        .glass-box {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 35px;
+            padding: 45px 25px;
+            width: 100%; max-width: 380px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            margin-bottom: 35px;
+        }
+
+        h2 { font-family: 'Playfair Display', serif; color: #5b0606; letter-spacing: 4px; font-size: 1rem; margin-bottom: 5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); }
+        
+        h1 { 
+            font-family: 'Playfair Display', serif; font-size: 5rem; 
+            margin: 0; color: #6d0808; font-weight: 900;
+            text-shadow: 2px 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .level-up {
+            display: inline-block; padding: 6px 22px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid white; border-radius: 50px;
+            color: #fff; font-weight: bold; margin-top: 15px;
+        }
+
+        /* MEMORIES GALLERY */
+        .gallery-label { font-family: 'Playfair Display', serif; color: #000000; font-size: 2rem; margin-top: 20px; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); }
+
+        .swipe-track {
+            display: flex; overflow-x: auto; gap: 15px; width: 100vw;
+            padding: 20px; scrollbar-width: none;
+        }
+        .swipe-track::-webkit-scrollbar { display: none; }
+
+        .memory-polaroid {
+            flex: 0 0 280px;
+            background: #fff; padding: 12px 12px 40px 12px;
+            border-radius: 5px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: rotate(var(--rot));
+        }
+
+        .memory-polaroid img {
+            width: 100%; height: 320px; object-fit: cover;
+        }
+
+        .caption { color: #555; font-family: 'Playfair Display', serif; font-style: italic; margin-top: 15px; font-size: 1.2rem; }
+
+        /* WISHES & BLESSINGS */
+        .blessing-text {
+            font-size: 1.2rem; min-height: 110px; color: #fff;
+            margin: 25px 0; font-style: italic; line-height: 1.6;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+
+        .gold-btn {
+            background: #fff; color: #d63384;
+            border: none; padding: 18px 45px; border-radius: 50px;
+            font-weight: bold; font-size: 1.1rem; cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .gold-btn:active { transform: scale(0.95); }
+
+        .apology {
+            font-size: 0.8rem; color: #000000; margin-top: 35px;
+            padding: 0 30px; opacity: 0.8; line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rose-background"></div>
+    <div class="rose-overlay"></div>
+
+    <div class="scroll-container">
+        <div class="glass-box">
+            <h2>FOR SOMEONE GORGEOUS💖</h2>
+            <h1>AQSA</h1>
+            <div class="level-up">❤️Happy Birthday❤️</div>
+            <p style="color: rgb(0, 0, 0); margin-top: 25px; font-weight: 300; font-size: 1.1rem;">
+                May Allah bless you with a life as beautiful as a garden in paradise. ❤️
+            </p>
+        </div>
+
+        <div class="gallery-label">Lovely Pics Of You</div>
+        <div class="swipe-track">
+            <div class="memory-polaroid" style="--rot: -2deg">
+                <img src="Aqsa.jpeg" alt="Aqsa Memory">
+                <div class="caption">A FLOWER WITH FLOWER💖</div>
+            </div>
+            <div class="memory-polaroid" style="--rot: 3deg">
+                <img src="Aqsa 2.jpeg" alt="Aqsa Memory">
+                <div class="caption">The Queen💖</div>
+            </div>
+            <div class="memory-polaroid" style="--rot: -1deg">
+                <img src="brithday.jpeg" alt="Aqsa Memory">
+                <div class="caption">💖</div>
+            </div>
+            <div class="memory-polaroid" style="--rot: -2deg">
+                <img src="flower.jpeg" alt="Aqsa Memory">
+                <div class="caption">💖</div>
+            </div>
+            <div class="memory-polaroid" style="--rot: -2deg">
+                <img src="Aqsa 3.jpeg" alt="Aqsa Memory">
+                <div class="caption">BEAUTIFUL💖</div>
+            </div>
+            <div class="memory-polaroid" style="--rot: -2deg">
+                <img src="Aqsa 4.jpeg" alt="Aqsa Memory">
+                <div class="caption">GORGEOUS💖</div>
+            </div>
+        </div>
+
+        <div class="glass-box" style="margin-top: 30px;">
+            <div class="blessing-text" id="blessBox">
+                Tap the button for a special birthday blessing...
+            </div>
+            <button class="gold-btn" onclick="getBlessing()">Get Blessing ✨</button>
+            
+            <p class="apology">
+                            “I truly apologize for any inconvenience. Your happiness matters to us, and we’re here to make things right.”
+                
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const blessings = [
+            "May Allah bless you with infinite joy and barakah today! 🤲💖",
+            "I pray your 22s are the most magical years of your life. 🌟",
+            "May Allah shower you with health, success, and love. ✨",
+            "You are the greatest gift Allah has ever given me. 💍",
+            "May Allah always keep that beautiful smile on your face. 🤲🌸",
+            "Happy Birthday! May all your prayers be answered this year. 🕊️",
+            "May Allah protect you and keep our hearts united forever. ❤️"
+        ];
+
+        function getBlessing() {
+            const el = document.getElementById('blessBox');
+            el.style.opacity = 0;
+            setTimeout(() => {
+                el.innerHTML = blessings[Math.floor(Math.random() * blessings.length)];
+                el.style.opacity = 1;
+            }, 200);
+
+            // Explosive Pink/White Confetti
+            confetti({
+                particleCount: 120,
+                spread: 80,
+                origin: { y: 0.8 },
+                colors: ['#ffb6c1', '#ffffff', '#ff69b4']
+            });
+        }
+
+        // Tap interaction: Spawns Roses
+        document.addEventListener('click', (e) => {
+            const flower = document.createElement('div');
+            flower.innerHTML = '🌹';
+            flower.style.position = 'fixed';
+            flower.style.left = e.clientX + 'px';
+            flower.style.top = e.clientY + 'px';
+            flower.style.fontSize = '35px';
+            flower.style.pointerEvents = 'none';
+            document.body.appendChild(flower);
+            
+            flower.animate([
+                { transform: 'translateY(0) scale(1)', opacity: 1 },
+                { transform: 'translateY(-200px) rotate(45deg) scale(2)', opacity: 0 }
+            ], { duration: 2000, easing: 'ease-out' }).onfinish = () => flower.remove();
+        });
+    </script>
+</body>
+</html>
